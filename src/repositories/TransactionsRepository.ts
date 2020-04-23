@@ -36,7 +36,7 @@ class TransactionsRepository {
           default:
             break;
         }
-        return acum;
+        return acc;
       },
       {
         income: 0,
