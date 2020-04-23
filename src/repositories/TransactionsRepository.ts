@@ -25,15 +25,13 @@ class TransactionsRepository {
 
   public getBalance(): Balance {
     const balance = this.transactions.reduce(
-      (acum: Balance, transaction: Transaction) => {
+      (acc: Balance, transaction: Transaction) => {
         switch (transaction.type) {
           case 'income':
-            // eslint-disable-next-line no-param-reassign
-            acum.income += transaction.value;
+            acc.income += transaction.value;
             break;
           case 'outcome':
-            // eslint-disable-next-line no-param-reassign
-            acum.outcome += transaction.value;
+            acc.outcome += transaction.value;
             break;
           default:
             break;
